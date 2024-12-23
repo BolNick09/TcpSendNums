@@ -17,7 +17,7 @@ namespace SendNumsServer
         }
         private async Task Listen()
         {
-            Console.WriteLine("Enter Ip:");
+            Console.WriteLine("Введите IP:");
             if (!IPAddress.TryParse (Console.ReadLine(), out var address))
             {
                 Console.WriteLine("Невалидный IP, отключение сервера");
