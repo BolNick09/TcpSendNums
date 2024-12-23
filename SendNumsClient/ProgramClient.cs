@@ -5,10 +5,10 @@ using TcpLib;
 
 namespace SendNumsClient
 {
-    internal class Program
+    internal class ProgramClient
     {
         private TcpClient server = new();
-        private static void Main(string[] args) => new Program().Start();
+        private static void Main(string[] args) => new ProgramClient().Start();
 
 
         private void Start()

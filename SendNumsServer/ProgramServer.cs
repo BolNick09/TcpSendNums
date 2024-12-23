@@ -6,18 +6,15 @@ using System.Text;
 
 namespace SendNumsServer
 {
-    internal class Program
+    internal class ProgramServer
     {
-        private static void Main(string[] args) => new Program().Run();
+        private static void Main(string[] args) => new ProgramServer().Run();
 
 
         private void Run()
         {
             Listen().Wait();
         }
-
-
-        private IList<TcpClient> clients = [];
         private async Task Listen()
         {
             Console.WriteLine("Enter Ip:");
@@ -32,8 +29,6 @@ namespace SendNumsServer
             while (true)
             {
                 TcpClient client = await listen.AcceptTcpClientAsync();
-                lock (clients)
-                    clients.Add(client);
 
                 ListenToClient(client);
                 client.Close();
